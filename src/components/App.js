@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../stylesheets/App.css';
-import api from '../services/api';
-
-api().then((data) => {
-  console.log(data);
-});
+import getApiData from '../services/api';
 
 function App() {
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    getApiData().then((data) => {
+      setCharacters(data);
+    });
+  }, []);
+
+  console.log(characters);
   return <div className="App">Hola, mundo</div>;
 }
 
