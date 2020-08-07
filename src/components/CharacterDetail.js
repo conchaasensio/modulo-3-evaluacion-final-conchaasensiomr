@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CharacterDetail = (props) => {
   return (
@@ -15,9 +16,12 @@ const CharacterDetail = (props) => {
           <li>{props.status}</li>
           <li>{props.specie}</li>
           <li>{props.origin.name}</li>
-          <li>{props.episodes}</li>
+          <li>{props.episodes.length}</li>
         </ul>
       </section>
+      <Link to="/">
+        <button>Cerrar</button>
+      </Link>
     </div>
   );
 };

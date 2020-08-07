@@ -15,7 +15,6 @@ function App() {
     });
   }, []);
 
-  //console.log(characters);
   const renderCharacterDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.id);
     const character = characters.find(
