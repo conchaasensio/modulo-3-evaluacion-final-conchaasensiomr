@@ -5,7 +5,7 @@ const CharacterCard = (props) => {
     <article>
       <img src={props.image} alt={props.name} />
       <h3>{props.name}</h3>
-      <p>{props.species}</p>
+      <p>{props.specie}</p>
     </article>
   );
 };

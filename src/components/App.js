@@ -15,6 +15,7 @@ function App() {
 
   return (
     <div className="App">
+      <header>'Aquí va el título'</header>
       <CharacterList characters={characters} />
     </div>
   );
