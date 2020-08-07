@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import '../stylesheets/App.css';
+import { Route, Switch } from 'react-router-dom';
+import '../stylesheets/App.scss';
 import getApiData from '../services/api';
 // import CharacterCard from './CharacterCard';
+import CharacterDetail from './CharacterDetail';
 import CharacterList from './CharacterList';
 
 function App() {
@@ -13,10 +15,40 @@ function App() {
     });
   }, []);
 
+  //console.log(characters);
+  const renderCharacterDetail = (props) => {
+    const routeCharacterId = parseInt(props.match.params.id);
+    const character = characters.find(
+      (character) => character.id === routeCharacterId
+    );
+    if (character) {
+      return (
+        <CharacterDetail
+          image={character.image}
+          name={character.name}
+          status={character.status}
+          specie={character.species}
+          origin={character.origin}
+          episodes={character.episode}
+        />
+      );
+    } else {
+      return <p>'Personaje no encontrado'</p>;
+    }
+  };
+
   return (
     <div className="App">
-      <header>'Aquí va el título'</header>
-      <CharacterList characters={characters} />
+      <header>
+        <h1>Rick & Morty</h1>
+      </header>
+
+      <Switch>
+        <Route exact path="/">
+          <CharacterList characters={characters} />
+        </Route>
+        <Route path="/character/:id" render={renderCharacterDetail} />
+      </Switch>
     </div>
   );
 }
