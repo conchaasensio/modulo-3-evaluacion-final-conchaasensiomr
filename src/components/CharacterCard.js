@@ -1,7 +1,6 @@
 import React from 'react';
 
 const CharacterCard = (props) => {
-  console.log(props);
   return (
     <article>
       <img src={props.image} alt={props.name} />

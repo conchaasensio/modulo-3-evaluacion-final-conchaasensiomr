@@ -13,7 +13,6 @@ function App() {
     });
   }, []);
 
-  console.log(characters);
   return (
     <div className="App">
       <CharacterList characters={characters} />
