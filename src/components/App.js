@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../stylesheets/App.css';
 import getApiData from '../services/api';
+// import CharacterCard from './CharacterCard';
+import CharacterList from './CharacterList';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -12,7 +14,11 @@ function App() {
   }, []);
 
   console.log(characters);
-  return <div className="App">Hola, mundo</div>;
+  return (
+    <div className="App">
+      <CharacterList characters={characters} />
+    </div>
+  );
 }
 
 export default App;
