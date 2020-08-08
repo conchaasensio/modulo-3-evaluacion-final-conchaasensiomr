@@ -28,7 +28,7 @@ const CharacterList = (props) => {
           id={character.id}
           name={character.name}
           image={character.image}
-          specie={character.species}
+          specie={character.specie}
         />
       );
     });
