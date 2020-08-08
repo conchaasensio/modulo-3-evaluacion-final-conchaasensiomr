@@ -56,7 +56,10 @@ function App() {
 
       <Switch>
         <Route exact path="/">
-          <Filters handleFilterName={handleFilterName} />
+          <Filters
+            filterName={filterName}
+            handleFilterName={handleFilterName}
+          />
           <CharacterList characters={renderFilteredCharacters()} />
         </Route>
         <Route path="/character/:id" render={renderCharacterDetail} />

@@ -11,7 +11,12 @@ const Filters = (props) => {
     <form action="">
       <div>
         <label htmlFor="filterName">Busca tu personaje</label>
-        <input type="text" id="filterName" onChange={handleFilterNameChild} />
+        <input
+          type="text"
+          id="filterName"
+          value={props.filterName}
+          onChange={handleFilterNameChild}
+        />
       </div>
       <div>
         <label htmlFor="filterSpecie">Busca por especie</label>
