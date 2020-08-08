@@ -8,8 +8,14 @@ const Filters = (props) => {
       value: ev.target.value,
     });
   };
+  const handleSubmit = (ev) => {
+    if (ev.key === 'Enter') {
+      ev.preventDefault();
+    }
+  };
+
   return (
-    <form action="">
+    <form onKeyDown={handleSubmit}>
       <div>
         <label htmlFor="filterName">Busca tu personaje</label>
         <input
