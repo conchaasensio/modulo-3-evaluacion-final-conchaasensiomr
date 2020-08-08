@@ -28,7 +28,7 @@ const Filters = (props) => {
           onChange={handleFilterNameChild}
         >
           <option value="all">Todos</option>
-          <option value="Human">Human</option>
+          <option value="Humano">Humano</option>
           <option value="Alien">Alien</option>
         </select>
       </div>
