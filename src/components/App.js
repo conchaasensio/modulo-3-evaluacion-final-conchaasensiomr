@@ -73,6 +73,7 @@ function App() {
           />
           <CharacterList
             filterName={filterName}
+            filterSpecie={filterSpecie}
             characters={renderFilteredCharacters()}
           />
         </Route>

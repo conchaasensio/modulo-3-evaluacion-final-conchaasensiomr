@@ -3,9 +3,11 @@ import CharacterCard from './CharacterCard';
 
 const CharacterList = (props) => {
   if (props.characters.length === 0) {
+    const specie =
+      props.filterSpecie === 'all' ? 'personaje' : props.filterSpecie;
     return (
       <p>
-        {`No hay ningún personaje que coincida con la palabra ${props.filterName}`}
+        {`No hay ningún ${specie} que coincida con la palabra ${props.filterName}`}
       </p>
     );
   }

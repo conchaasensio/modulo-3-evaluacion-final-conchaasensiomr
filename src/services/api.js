@@ -1,9 +1,7 @@
 const getDataFromApi = () => {
   return fetch('https://rickandmortyapi.com/api/character/')
     .then((response) => response.json())
-    .then((data) => {
-      return data.results;
-    });
+    .then((data) => data.results);
 };
 
 export default getDataFromApi;
