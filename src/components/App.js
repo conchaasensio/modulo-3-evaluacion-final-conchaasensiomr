@@ -51,7 +51,7 @@ function App() {
   };
 
   function isCharacterSpecie(character) {
-    return filterSpecie === 'all' || character.species === filterSpecie;
+    return filterSpecie === 'all' || character.specie === filterSpecie;
   }
 
   function containsCharacterName(character) {
