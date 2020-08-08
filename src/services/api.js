@@ -1,23 +1,11 @@
 const getDataFromApi = async () => {
-  const firstCharacters = fetchCharacters(
-    'https://rickandmortyapi.com/api/character/'
-  );
-  const secondCharacters = fetchCharacters(
-    'https://rickandmortyapi.com/api/character/?page=2'
-  );
-  const thirdCharacters = fetchCharacters(
-    'https://rickandmortyapi.com/api/character/?page=3'
-  );
-
   const promisesResult = await Promise.all([
-    firstCharacters,
-    secondCharacters,
-    thirdCharacters,
+    fetchCharacters('https://rickandmortyapi.com/api/character/'),
+    fetchCharacters('https://rickandmortyapi.com/api/character/?page=2'),
+    fetchCharacters('https://rickandmortyapi.com/api/character/?page=3'),
   ]);
 
-  const result = [].concat(...promisesResult);
-
-  return result;
+  return [].concat(...promisesResult);
 };
 
 function fetchCharacters(url) {
