@@ -1,5 +1,3 @@
-import { findAllInRenderedTree } from 'react-dom/test-utils';
-
 const getDataFromApi = () => {
   return fetch('https://rickandmortyapi.com/api/character/')
     .then((response) => response.json())
