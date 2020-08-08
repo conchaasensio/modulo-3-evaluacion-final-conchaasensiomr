@@ -5,8 +5,7 @@ const CharacterList = (props) => {
   if (props.characters.length === 0) {
     return (
       <p>
-        No hay ningún personaje que coincida con los criterios de búsqueda
-        aplicados
+        {`No hay ningún personaje que coincida con la palabra ${props.filterName}`}
       </p>
     );
   }

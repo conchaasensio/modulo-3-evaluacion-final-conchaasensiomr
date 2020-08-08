@@ -2,6 +2,7 @@ import React from 'react';
 
 const Filters = (props) => {
   const handleFilterNameChild = (ev) => {
+    ev.preventDefault();
     props.handleFilters({
       key: ev.target.id,
       value: ev.target.value,

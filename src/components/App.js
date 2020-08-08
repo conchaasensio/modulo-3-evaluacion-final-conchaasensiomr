@@ -19,7 +19,6 @@ function App() {
   }, []);
 
   const handleFilters = (data) => {
-    console.log(data);
     if (data.key === 'filterName') {
       setFilterName(data.value);
     } else if (data.key === 'filterSpecie') {
@@ -76,7 +75,10 @@ function App() {
             filterName={filterName}
             handleFilters={handleFilters}
           />
-          <CharacterList characters={renderFilteredCharacters()} />
+          <CharacterList
+            filterName={filterName}
+            characters={renderFilteredCharacters()}
+          />
         </Route>
         <Route path="/character/:id" render={renderCharacterDetail} />
       </Switch>
