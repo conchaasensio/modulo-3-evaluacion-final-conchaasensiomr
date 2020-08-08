@@ -9,17 +9,27 @@ const CharacterList = (props) => {
       </p>
     );
   }
-  const htmlCode = props.characters.map((character) => {
-    return (
-      <CharacterCard
-        key={character.id}
-        id={character.id}
-        name={character.name}
-        image={character.image}
-        specie={character.species}
-      />
-    );
-  });
+  const htmlCode = props.characters
+    .sort(function (a, b) {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
+    })
+    .map((character) => {
+      return (
+        <CharacterCard
+          key={character.id}
+          id={character.id}
+          name={character.name}
+          image={character.image}
+          specie={character.species}
+        />
+      );
+    });
   return <section>{htmlCode}</section>;
 };
 
