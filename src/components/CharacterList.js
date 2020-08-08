@@ -2,6 +2,14 @@ import React from 'react';
 import CharacterCard from './CharacterCard';
 
 const CharacterList = (props) => {
+  if (props.characters.length === 0) {
+    return (
+      <p>
+        No hay ningún personaje que coincida con los criterios de búsqueda
+        aplicados
+      </p>
+    );
+  }
   const htmlCode = props.characters.map((character) => {
     return (
       <CharacterCard
