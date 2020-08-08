@@ -39,9 +39,9 @@ function App() {
         image={character.image}
         name={character.name}
         status={character.status}
-        specie={character.species}
+        specie={character.specie}
         origin={character.origin}
-        episodes={character.episode}
+        episodes={character.episodes}
       />
     );
   };

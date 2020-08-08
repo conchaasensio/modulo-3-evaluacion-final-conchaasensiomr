@@ -15,8 +15,8 @@ const CharacterDetail = (props) => {
         <ul>
           <li>{`Estado: ${props.status}`}</li>
           <li>{`Especie: ${props.specie}`}</li>
-          <li>{`Planeta de origen: ${props.origin.name}`}</li>
-          <li>{`Nº de episodios: ${props.episodes.length}`}</li>
+          <li>{`Planeta de origen: ${props.origin}`}</li>
+          <li>{`Nº de episodios: ${props.episodes}`}</li>
         </ul>
       </section>
       <Link to="/">
