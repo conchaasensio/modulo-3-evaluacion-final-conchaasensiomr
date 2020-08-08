@@ -31,36 +31,32 @@ function App() {
     const character = characters.find(
       (character) => character.id === routeCharacterId
     );
-    if (character) {
-      return (
-        <CharacterDetail
-          image={character.image}
-          name={character.name}
-          status={character.status}
-          specie={character.species}
-          origin={character.origin}
-          episodes={character.episode}
-        />
-      );
-    } else {
+    if (!character) {
       return <p>'Personaje no encontrado'</p>;
     }
+    return (
+      <CharacterDetail
+        image={character.image}
+        name={character.name}
+        status={character.status}
+        specie={character.species}
+        origin={character.origin}
+        episodes={character.episode}
+      />
+    );
   };
 
   const renderFilteredCharacters = () => {
-    return characters
-      .filter((character) => {
-        return character.name.toLowerCase().includes(filterName.toLowerCase());
-      })
-      .filter((character) => {
-        if (filterSpecie === 'all') {
-          return true;
-        } else {
-          console.log(character.species);
-          return character.species === filterSpecie;
-        }
-      });
+    return characters.filter(containsCharacterName).filter(isCharacterSpecie);
   };
+
+  function isCharacterSpecie(character) {
+    return filterSpecie === 'all' || character.species === filterSpecie;
+  }
+
+  function containsCharacterName(character) {
+    return character.name.toLowerCase().includes(filterName.toLowerCase());
+  }
 
   return (
     <div className="App">
