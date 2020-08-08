@@ -9,6 +9,7 @@ import CharacterList from './CharacterList';
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const [filterName, setFilterName] = useState('');
 
   useEffect(() => {
     getApiData().then((data) => {
@@ -37,6 +38,12 @@ function App() {
     }
   };
 
+  const renderFilteredCharacters = () => {
+    return characters.filter((character) => {
+      return character.name.includes(filterName);
+    });
+  };
+
   return (
     <div className="App">
       <header>
@@ -46,7 +53,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Filters />
-          <CharacterList characters={characters} />
+          <CharacterList characters={renderFilteredCharacters()} />
         </Route>
         <Route path="/character/:id" render={renderCharacterDetail} />
       </Switch>
