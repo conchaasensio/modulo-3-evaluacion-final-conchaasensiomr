@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import '../stylesheets/App.scss';
 import getApiData from '../services/api';
 // import CharacterCard from './CharacterCard';
+import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 import CharacterList from './CharacterList';
 
@@ -44,6 +45,7 @@ function App() {
 
       <Switch>
         <Route exact path="/">
+          <Filters />
           <CharacterList characters={characters} />
         </Route>
         <Route path="/character/:id" render={renderCharacterDetail} />
