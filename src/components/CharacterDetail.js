@@ -9,18 +9,22 @@ const CharacterDetail = (props) => {
           <span className="modal__close--icon"></span>
         </a>
       </header>
-      <section>
+      <section className="card__container">
         <img src={props.image} alt={props.name} />
-        <h2>{props.name}</h2>
-        <ul>
-          <li>{`Estado: ${props.status}`}</li>
-          <li>{`Especie: ${props.specie}`}</li>
-          <li>{`Planeta de origen: ${props.origin}`}</li>
-          <li>{`Nº de episodios: ${props.episodes}`}</li>
-        </ul>
+        <div className="card__text">
+          <div className="card__title">
+            <h2>{props.name}</h2>
+          </div>
+          <ul>
+            <li>{`Estado: ${props.status}`}</li>
+            <li>{`Especie: ${props.specie}`}</li>
+            <li>{`Planeta de origen: ${props.origin}`}</li>
+            <li>{`Nº de episodios: ${props.episodes}`}</li>
+          </ul>
+        </div>
       </section>
-      <Link to="/">
-        <button>Cerrar</button>
+      <Link className="button__return" to="/">
+        <button>Volver</button>
       </Link>
     </div>
   );
