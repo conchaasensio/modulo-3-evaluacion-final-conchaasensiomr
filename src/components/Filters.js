@@ -2,8 +2,8 @@ import React from 'react';
 
 const Filters = (props) => {
   const handleFilterNameChild = (ev) => {
-    props.handleFilterName({
-      key: 'filterName',
+    props.handleFilters({
+      key: ev.target.id,
       value: ev.target.value,
     });
   };
@@ -20,10 +20,15 @@ const Filters = (props) => {
       </div>
       <div>
         <label htmlFor="filterSpecie">Busca por especie</label>
-        <select name="filterSpecie" id="filterSpecie">
+        <select
+          name="filterSpecie"
+          id="filterSpecie"
+          value={props.filterSpecie}
+          onChange={handleFilterNameChild}
+        >
           <option value="all">Todos</option>
-          <option value="human">Human</option>
-          <option value="alien">Alien</option>
+          <option value="Human">Human</option>
+          <option value="Alien">Alien</option>
         </select>
       </div>
     </form>

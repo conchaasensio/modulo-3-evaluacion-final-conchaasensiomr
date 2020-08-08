@@ -10,6 +10,7 @@ import CharacterList from './CharacterList';
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState('');
+  const [filterSpecie, setFilterSpecie] = useState('all');
 
   useEffect(() => {
     getApiData().then((data) => {
@@ -17,8 +18,13 @@ function App() {
     });
   }, []);
 
-  const handleFilterName = (data) => {
-    setFilterName(data.value);
+  const handleFilters = (data) => {
+    console.log(data);
+    if (data.key === 'filterName') {
+      setFilterName(data.value);
+    } else if (data.key === 'filterSpecie') {
+      setFilterSpecie(data.value);
+    }
   };
 
   const renderCharacterDetail = (props) => {
@@ -43,9 +49,18 @@ function App() {
   };
 
   const renderFilteredCharacters = () => {
-    return characters.filter((character) => {
-      return character.name.includes(filterName);
-    });
+    return characters
+      .filter((character) => {
+        return character.name.toLowerCase().includes(filterName.toLowerCase());
+      })
+      .filter((character) => {
+        if (filterSpecie === 'all') {
+          return true;
+        } else {
+          console.log(character.species);
+          return character.species === filterSpecie;
+        }
+      });
   };
 
   return (
@@ -57,8 +72,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Filters
+            filterSpecie={filterSpecie}
             filterName={filterName}
-            handleFilterName={handleFilterName}
+            handleFilters={handleFilters}
           />
           <CharacterList characters={renderFilteredCharacters()} />
         </Route>
