@@ -1,10 +1,20 @@
-const getDataFromApi = () => {
-  return fetch('https://rickandmortyapi.com/api/character/')
+const getDataFromApi = async () => {
+  const firstCharacters = await fetchCharacters(
+    'https://rickandmortyapi.com/api/character/'
+  );
+  const secondCharacters = await fetchCharacters(
+    'https://rickandmortyapi.com/api/character/?page=2'
+  );
+  return firstCharacters.concat(secondCharacters);
+};
+
+function fetchCharacters(url) {
+  return fetch(url)
     .then((response) => response.json())
     .then((data) => data.results)
     .then((characters) => characters.map(selectRelevantData))
     .then((characters) => characters.map(translateCharacterInfo));
-};
+}
 
 function translateCharacterInfo(character) {
   character.specie = character.specie === 'Human' ? 'Humano' : 'Alien';
