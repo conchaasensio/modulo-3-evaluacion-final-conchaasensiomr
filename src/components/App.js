@@ -17,6 +17,10 @@ function App() {
     });
   }, []);
 
+  const handleFilterName = (data) => {
+    setFilterName(data.value);
+  };
+
   const renderCharacterDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.id);
     const character = characters.find(
@@ -52,7 +56,7 @@ function App() {
 
       <Switch>
         <Route exact path="/">
-          <Filters />
+          <Filters handleFilterName={handleFilterName} />
           <CharacterList characters={renderFilteredCharacters()} />
         </Route>
         <Route path="/character/:id" render={renderCharacterDetail} />
