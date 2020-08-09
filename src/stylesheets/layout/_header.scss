@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  height: 250px;
+  padding: rem(50);
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .header__logo {
+    width: rem(200);
+    @include tablet {
+      width: 60%;
+    }
+  }
+  .header__img {
+    width: rem(100);
+    @include tablet {
+      width: 30%;
+    }
+  }
+}

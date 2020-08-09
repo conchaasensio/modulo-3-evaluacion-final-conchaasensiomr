@@ -14,9 +14,7 @@ function App() {
   const [filterSpecie, setFilterSpecie] = useState('all');
 
   useEffect(() => {
-    getApiData().then((data) => {
-      setCharacters(data);
-    });
+    getApiData().then((data) => setCharacters(data));
   }, []);
 
   const handleFilters = (data) => {
@@ -33,7 +31,9 @@ function App() {
       (character) => character.id === routeCharacterId
     );
     if (!character) {
-      return <p>'Personaje no encontrado'</p>;
+      return (
+        <p className="route__character-notfound">Personaje no encontrado</p>
+      );
     }
     return (
       <div>

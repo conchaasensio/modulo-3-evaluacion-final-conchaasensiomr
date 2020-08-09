@@ -47,4 +47,4 @@ function selectRelevantData(character) {
   };
 }
 
-export default getDataFromApi;
+module.exports = getDataFromApi;

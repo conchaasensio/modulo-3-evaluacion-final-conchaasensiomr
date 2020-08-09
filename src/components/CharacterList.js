@@ -7,10 +7,11 @@ const CharacterList = (props) => {
       props.filterSpecie === 'all' ? 'personaje' : props.filterSpecie;
     return (
       <div className="container__notfound">
-        <p>
+        <p className="container__notfound-text">
           {`No hay ningún ${specie} que coincida con el nombre ${props.filterName}`}
         </p>
         <img
+          className="container__notfound-img"
           src="https://media.giphy.com/media/4pjKt6jfT6Z7W/giphy.gif"
           alt="no encontrado"
         />
