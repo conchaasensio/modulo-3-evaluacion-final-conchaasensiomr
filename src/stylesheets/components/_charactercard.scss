@@ -13,6 +13,7 @@
     padding: rem(10);
   }
   .character__list {
+    border-radius: 5px;
     width: rem(150);
     height: rem(200);
     background-color: #1fb0c7;
@@ -43,7 +44,7 @@
         .character__title {
           color: #ebebeb;
           font-size: rem(11);
-          margin: 0;
+          margin-bottom: rem(5);
           @include tablet {
             font-size: rem(13);
           }
@@ -72,12 +73,17 @@
 }
 
 .container__notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   color: #ebebeb;
+  align-items: center;
   text-align: center;
   font-size: rem(18);
-  width: rem (200);
-  height: rem(200);
-  &img {
-    width: 60%;
+  width: rem(700);
+  height: rem(2000);
+  img {
+    width: 250px;
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
+import notfound_image from '../images/notfound_image.png';
 
 const CharacterList = (props) => {
   if (props.characters.length === 0) {
@@ -10,11 +11,9 @@ const CharacterList = (props) => {
         <p className="container__notfound-text">
           {`No hay ningún ${specie} que coincida con el nombre ${props.filterName}`}
         </p>
-        <img
-          className="container__notfound-img"
-          src="https://media.giphy.com/media/4pjKt6jfT6Z7W/giphy.gif"
-          alt="no encontrado"
-        />
+        <div className="container__notfound-img">
+          <img src={notfound_image} alt="no encontrado" />
+        </div>
       </div>
     );
   }

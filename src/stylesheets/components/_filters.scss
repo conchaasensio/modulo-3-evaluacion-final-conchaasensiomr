@@ -8,7 +8,8 @@
   .input__search {
     width: rem(200);
     height: rem(30);
-    border: 1px solid #1fb0c7;
+    border: 3px solid #1fb0c7;
+    border-radius: 5px;
     background-color: black;
     color: #1fb0c7;
     padding: rem(6);
@@ -18,12 +19,8 @@
     }
   }
   .select__filter {
-    color: blanchedalmond;
+    color: #1fb0c7;
     padding: rem(5);
     margin-top: rem(10);
-    .select__input {
-      padding-right: rem(14);
-      padding-left: rem(8);
-    }
   }
 }

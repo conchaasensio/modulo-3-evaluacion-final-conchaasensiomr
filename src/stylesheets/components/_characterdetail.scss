@@ -72,6 +72,18 @@
   }
 }
 
-.route__character-notfound {
-  color: white;
+.container__character--notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: #ebebeb;
+  align-items: center;
+  text-align: center;
+  font-size: rem(18);
+  width: rem(700);
+  height: rem(2000);
+  img {
+    width: 250px;
+  }
 }

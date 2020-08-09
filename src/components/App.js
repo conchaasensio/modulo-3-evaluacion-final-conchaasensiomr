@@ -7,6 +7,7 @@ import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 import CharacterList from './CharacterList';
 import Header from './Header';
+import notfound_image from '../images/notfound_image.png';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -32,7 +33,12 @@ function App() {
     );
     if (!character) {
       return (
-        <p className="route__character-notfound">Personaje no encontrado</p>
+        <div className="container__character--notfound">
+          <p className="route__character-notfound">
+            El personaje que buscas no existe
+          </p>
+          <img src={notfound_image} alt="no encontrado" />
+        </div>
       );
     }
     return (

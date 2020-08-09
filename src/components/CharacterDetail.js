@@ -10,13 +10,6 @@ const CharacterDetail = (props) => {
         <div className="card__text">
           <div className="card__title">
             <h2>{props.name}</h2>
-            <div className="card__status">
-              {props.status === 'Muerto' ? (
-                <img src={rip} alt={props.status} />
-              ) : (
-                ''
-              )}
-            </div>
           </div>
           <ul>
             <li>{`Estado: ${props.status}`}</li>
