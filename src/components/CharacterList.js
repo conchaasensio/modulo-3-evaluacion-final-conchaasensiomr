@@ -1,6 +1,7 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
 import notfound_image from '../images/notfound_image.png';
+import PropTypes from 'prop-types';
 
 const CharacterList = (props) => {
   if (props.characters.length === 0) {
@@ -43,6 +44,14 @@ const CharacterList = (props) => {
       );
     });
   return <ul className="characters__container">{htmlCode}</ul>;
+};
+
+CharacterCard.propTypes = {
+  name: PropTypes.string,
+  specie: PropTypes.string,
+  id: PropTypes.number,
+  gender: PropTypes.string,
+  status: PropTypes.string,
 };
 
 export default CharacterList;

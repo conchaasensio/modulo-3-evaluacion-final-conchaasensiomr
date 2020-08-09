@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import rip from '../images/rip.png';
 
 const CharacterDetail = (props) => {
   return (

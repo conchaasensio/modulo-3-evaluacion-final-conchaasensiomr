@@ -4,24 +4,17 @@
   padding: rem(50);
   text-align: center;
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: center;
   .header__logo {
-    width: rem(200);
-    @include tablet {
-      width: 60%;
-    }
+    width: 60%;
+    max-height: 250px;
+    // max-width: 250px;
   }
   .header__img {
-    width: rem(100);
-    @include tablet {
-      width: 30%;
-    }
-  }
-
-  .header__container {
-    max-width: 200px;
-    display: flex;
-    align-items: center;
+    width: 30%;
+    max-height: 250px;
+    max-width: 250px;
   }
 }

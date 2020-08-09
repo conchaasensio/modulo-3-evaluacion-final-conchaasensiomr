@@ -1,10 +1,11 @@
 import React from 'react';
 import Rick_and_Morty_logo from '../images/Rick_and_Morty_logo.png';
 import title_image from '../images/title_image.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div className="header__container">
+    <Link to="/">
       <div className="header">
         <img
           className="header__logo"
@@ -13,7 +14,7 @@ const Header = () => {
         />
         <img className="header__img" src={title_image} alt="portal" />{' '}
       </div>
-    </div>
+    </Link>
   );
 };
 

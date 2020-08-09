@@ -23,7 +23,7 @@ const CharacterCard = (props) => {
             </span>
             <span className="status__container">
               {props.status === 'Muerto' ? (
-                <i class="fas fa-skull-crossbones"></i>
+                <i className="fas fa-skull-crossbones"></i>
               ) : props.status === 'Desconocido' ? (
                 <i className="fas fa-question"></i>
               ) : (
