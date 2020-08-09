@@ -17,17 +17,18 @@ const Filters = (props) => {
   return (
     <form className="form__search" onKeyDown={handleSubmit}>
       <div>
-        <label htmlFor="filterName">Busca tu personaje</label>
+        <label htmlFor="filterName"></label>
         <input
           className="input__search"
           type="text"
+          placeholder="Escribe el nombre de un personaje"
           id="filterName"
           value={props.filterName}
           onChange={handleFilterNameChild}
         />
       </div>
       <div className="select__filter">
-        <label htmlFor="filterSpecie">Busca por especie</label>
+        <label htmlFor="filterSpecie">Selecciona la especie </label>
         <select
           className="select__input"
           name="filterSpecie"

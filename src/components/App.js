@@ -36,14 +36,16 @@ function App() {
       return <p>'Personaje no encontrado'</p>;
     }
     return (
-      <CharacterDetail
-        image={character.image}
-        name={character.name}
-        status={character.status}
-        specie={character.specie}
-        origin={character.origin}
-        episodes={character.episodes}
-      />
+      <div>
+        <CharacterDetail
+          image={character.image}
+          name={character.name}
+          status={character.status}
+          specie={character.specie}
+          origin={character.origin}
+          episodes={character.episodes}
+        />
+      </div>
     );
   };
 
