@@ -12,8 +12,24 @@ const CharacterCard = (props) => {
             <span className="character__text">{props.specie}</span>
           </div>
           <div className="character__icon">
-            <span></span>
-            <span></span>
+            <span>
+              {props.specie === 'Alien' ? (
+                <i className="fab fa-reddit-alien"></i>
+              ) : props.gender === 'Male' ? (
+                <i className="fas fa-male"></i>
+              ) : (
+                <i className="fas fa-female"></i>
+              )}
+            </span>
+            <span className="status__container">
+              {props.status === 'Muerto' ? (
+                <i className="far fa-dizzy"></i>
+              ) : props.status === 'Desconocido' ? (
+                <i className="fas fa-question"></i>
+              ) : (
+                <i className="fas fa-heartbeat"></i>
+              )}
+            </span>{' '}
           </div>
         </div>
       </article>

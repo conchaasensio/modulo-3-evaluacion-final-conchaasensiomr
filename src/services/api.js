@@ -18,9 +18,20 @@ function fetchCharacters(url) {
 
 function translateCharacterInfo(character) {
   character.specie = character.specie === 'Human' ? 'Humano' : 'Alien';
-  character.status = character.status === 'Alive' ? 'Vivo' : 'Muerto';
-
+  character.status = translateCharacterStatus(character);
   return character;
+}
+
+function translateCharacterStatus(character) {
+  if (character.status === 'Alive') {
+    return 'Vivo';
+  }
+  if (character.status === 'Dead') {
+    return 'Muerto';
+  }
+  if (character.status === 'unknown') {
+    return 'Desconocido';
+  }
 }
 
 function selectRelevantData(character) {
@@ -32,6 +43,7 @@ function selectRelevantData(character) {
     specie: character.species,
     origin: character.origin.name,
     episodes: character.episode.length,
+    gender: character.gender,
   };
 }
 

@@ -6,9 +6,15 @@ const CharacterList = (props) => {
     const specie =
       props.filterSpecie === 'all' ? 'personaje' : props.filterSpecie;
     return (
-      <p>
-        {`No hay ningún ${specie} que coincida con la palabra ${props.filterName}`}
-      </p>
+      <div className="container__notfound">
+        <p>
+          {`No hay ningún ${specie} que coincida con el nombre ${props.filterName}`}
+        </p>
+        <img
+          src="https://media.giphy.com/media/4pjKt6jfT6Z7W/giphy.gif"
+          alt="no encontrado"
+        />
+      </div>
     );
   }
   const htmlCode = props.characters
@@ -23,16 +29,20 @@ const CharacterList = (props) => {
     })
     .map((character) => {
       return (
-        <CharacterCard
-          key={character.id}
-          id={character.id}
-          name={character.name}
-          image={character.image}
-          specie={character.specie}
-        />
+        <li className="character__list" key={character.id}>
+          <CharacterCard
+            key={character.id}
+            id={character.id}
+            name={character.name}
+            image={character.image}
+            specie={character.specie}
+            gender={character.gender}
+            status={character.status}
+          />
+        </li>
       );
     });
-  return <section>{htmlCode}</section>;
+  return <ul className="characters__container">{htmlCode}</ul>;
 };
 
 export default CharacterList;
