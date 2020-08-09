@@ -11,14 +11,30 @@ describe('getDataFromApi', () => {
   test('selectRelevantData', async () => {
     const characters = await getDataFromApi();
 
-    expect(Object.keys(characters[0])).toContain('id');
-    expect(Object.keys(characters[0])).toContain('image');
-    expect(Object.keys(characters[0])).toContain('name');
-    expect(Object.keys(characters[0])).toContain('status');
-    expect(Object.keys(characters[0])).toContain('specie');
-    expect(Object.keys(characters[0])).toContain('origin');
-    expect(Object.keys(characters[0])).toContain('episodes');
-    expect(Object.keys(characters[0])).toContain('gender');
-    expect(Object.keys(characters[0]).length).toBe(8);
+    const characterKeys = Object.keys(characters[0]);
+    expect(characterKeys).toContain('id');
+    expect(characterKeys).toContain('image');
+    expect(characterKeys).toContain('name');
+    expect(characterKeys).toContain('status');
+    expect(characterKeys).toContain('specie');
+    expect(characterKeys).toContain('origin');
+    expect(characterKeys).toContain('episodes');
+    expect(characterKeys).toContain('gender');
+    expect(characterKeys.length).toBe(8);
+  });
+
+  test('translateCharacterSpecie', async () => {
+    const characters = await getDataFromApi();
+
+    expect(characters[0].specie).toBe('Humano');
+    expect(characters[5].specie).toBe('Alien');
+  });
+
+  test('translateCharacterStatus', async () => {
+    const characters = await getDataFromApi();
+
+    expect(characters[0].status).toBe('Vivo');
+    expect(characters[6].status).toBe('Desconocido');
+    expect(characters[7].status).toBe('Muerto');
   });
 });
