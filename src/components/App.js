@@ -6,6 +6,7 @@ import getApiData from '../services/api';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 import CharacterList from './CharacterList';
+import Header from './Header';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -60,9 +61,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h1>Rick & Morty</h1>
-      </header>
+      <Header />
 
       <Switch>
         <Route exact path="/">
