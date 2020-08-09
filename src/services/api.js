@@ -47,4 +47,11 @@ function selectRelevantData(character) {
   };
 }
 
-module.exports = getDataFromApi;
+export default getDataFromApi;
+/****************************
+ Da error al ejecutar los test con export default y necesitamos module.exports.
+ El problema es que con module.export da error al hacer el run docs.
+ He tratado de averiguar el por qué, pero no lo he conseguido. Por tanto, dejo comentado
+ el module.exports para poder revisarlo.
+ ****************************/
+//module.exports = getDataFromApi;
