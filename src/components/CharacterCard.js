@@ -16,13 +16,7 @@ const CharacterCard = (props) => {
               <i className={specieIconClass(props)}></i>
             </span>
             <span className="status__container">
-              {props.status === 'Muerto' ? (
-                <i className="fas fa-skull-crossbones"></i>
-              ) : props.status === 'Desconocido' ? (
-                <i className="fas fa-question"></i>
-              ) : (
-                <i className="fas fa-heartbeat"></i>
-              )}
+              <i className={statusIconClass(props)}></i>
             </span>{' '}
           </div>
         </div>
@@ -38,6 +32,16 @@ function specieIconClass(props) {
     return 'fas fa-male';
   } else {
     return 'fas fa-female';
+  }
+}
+
+function statusIconClass(props) {
+  if (props.status === 'Muerto') {
+    return 'fas fa-skull-crossbones';
+  } else if (props.status === 'Vivo') {
+    return 'fas fa-heartbeat';
+  } else {
+    return 'fas fa-question';
   }
 }
 
