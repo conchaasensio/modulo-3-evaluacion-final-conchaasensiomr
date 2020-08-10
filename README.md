@@ -1,7 +1,6 @@
-# Buscador de personajes de **Rick & Morty** 
+# Buscador de personajes de **Rick & Morty**
 
 ![readmeImage](./images/readme_title.png)
-
 
 Esta aplicación web es una **web de búsqueda de personajes** de la serie **Rick & Morty**, con la que el usuario puede buscar un personaje por su nombre, así como filtrando por la especie. Al seleccionar el personaje, aparecerá una tarjeta con más información acerca del mismo.
 
@@ -24,7 +23,7 @@ A continuación trataré de explicar más detalladamente:
 |   |- react-router
 |
 |– public
-|   |– index.html   
+|   |– index.html
 |
 |– src
 |   |– images
@@ -60,7 +59,8 @@ El código se agrupa dentro de la carpeta `src`, excepto el único archivo HTML 
 
 ## 2. React
 
-Para la parte de React, he creado los componentes: 
+Para la parte de React, he creado los componentes:
+
 ```
 |   |– components
 |      |– App.js
@@ -70,9 +70,10 @@ Para la parte de React, he creado los componentes:
 |      |– Filters.js
 |      |– Header.js
 ```
-El componente `App.js`es el que engloba la mayor parte de la lógica de la aplicación y desde el que se *llaman* al resto de componentes de la aplicación.
 
-El componente CharacterCard es el que se encarga de *pintar* la carta de cada personaje, que luego será importada a CharacterList y a través de este componente se devolverá un listado con cada una de las cartas de los personajes, cuya información recibimos de la llamada a la Api.
+El componente `App.js`es el que engloba la mayor parte de la lógica de la aplicación y desde el que se _llaman_ al resto de componentes de la aplicación.
+
+El componente CharacterCard es el que se encarga de _pintar_ la carta de cada personaje, que luego será importada a CharacterList y a través de este componente se devolverá un listado con cada una de las cartas de los personajes, cuya información recibimos de la llamada a la Api.
 
 El componente CharacterDetail es el que recoge una información más detallada sobre cada personaje y aparece en pantalla cuando hacemos click sobre uno de ellos.
 
@@ -80,7 +81,8 @@ El componente CharacterDetail es el que recoge una información más detallada s
 
 #### Más personajes, promesas en paralelo.
 
-Lo que se pedía en este ejercicio era realizar una web con el listado de personajes, utilizando una Api que nos devuelve información sobre los 20 primeros personajes de la serie. Sobre cada uno, teníamos que pintar al menos: 
+Lo que se pedía en este ejercicio era realizar una web con el listado de personajes, utilizando una Api que nos devuelve información sobre los 20 primeros personajes de la serie. Sobre cada uno, teníamos que pintar al menos:
+
 - Foto
 - Nombre
 - Especie
@@ -88,19 +90,17 @@ Lo que se pedía en este ejercicio era realizar una web con el listado de person
 Me di cuenta de que la información de la Api estaba paginada, por lo que en la primera página se encontraba la información de 20 personajes, pero había unos cuantos más (hasta unas 30 páginas). Traté de averiguar cómo hacer para obtener más personajes tras la llamada a la API y lo implementé uniendo el resultado de diferentes promesas.
 Al realizar varias peticiones veía que tardaba más en cargar los personasjes y probé con `await Promise.all`para realizar las llamadas al servidor en paralelo.
 
-
->```js
->const getDataFromApi = async () => {
->  const promisesResult = await Promise.all([
->    fetchCharacters('https://rickandmortyapi.>com/api/character/'),
->    fetchCharacters('https://rickandmortyapi.>com/api/character/?page=2'),
->    fetchCharacters('https://rickandmortyapi.>com/api/character/?page=3'),
->  ]);
+> ```js
+> const getDataFromApi = async () => {
+>   const promisesResult = await Promise.all([
+>     fetchCharacters('https://rickandmortyapi.>com/api/character/'),
+>     fetchCharacters('https://rickandmortyapi.>com/api/character/?page=2'),
+>     fetchCharacters('https://rickandmortyapi.>com/api/character/?page=3'),
+>   ]);
 >
->  return [].concat(...promisesResult);
->};
->
->```
+>   return [].concat(...promisesResult);
+> };
+> ```
 
 #### Tests de la API
 
@@ -116,7 +116,6 @@ Por otra parte, a la hora de filtrar los personajes, se pedía poder buscar por 
 
 ![specieFilter](./images/specie_filter.png)
 
-
 #### Traducción de la información
 
 En cuanto al detalle de los personajes, se pedía que al hacer click sobre la tarjeta de uno de ellos, su información apareciera a pantalla completa; utilizando para ello rutas y React router. En la pantalla de detalle tenía que aperecer, además de la foto, nombre y especie, el plantea de origen, el número de episodios en los que aparece y si está vivo o muerto. Para mantener el formato general de la página, en el que los mensajes y textos aparecen en español, traduje la información recibida de la Api para que en el detalle del personaje también apareciera en español.
@@ -131,10 +130,4 @@ Hice que en la tarjeta de los personajes apareciera con un icono, tanto la espec
 
 ## Cómo arrancar el proyecto
 
-Nos clonamos el repositorio y ejecutamos en la terminal `npm install`para cargar las dependencias que necesitamos para trabajar con el proyecto.
-
-
-
-
-
-
+Nos clonamos el repositorio y ejecutamos en la terminal `npm install`para cargar las dependencias que necesitamos para trabajar con el proyecto y hacemos `npm start` para arrancar el servidor.
