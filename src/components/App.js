@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import '../stylesheets/App.scss';
 import getApiData from '../services/api';
-// import CharacterCard from './CharacterCard';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 import CharacterList from './CharacterList';
